@@ -2,7 +2,9 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png"/>
     <br>
-    I have been clicked: {{ count }} times
+    <h1>I have been clicked: {{ count }} times</h1>
+
+    <button @click='count = count + 1'>Click to count</button>
   </div>
 </template>
 
