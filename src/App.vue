@@ -27,19 +27,20 @@ export default {
     let CircleY = Math.random()* canvas.height;
   
     ctx.beginPath();
-    ctx.strokeStyle = "red";
+    ctx.strokeStyle = "purple";
     ctx.lineWidth = "1";
     ctx.rect(X, 10, 10, 10);
     ctx.stroke();
 
+    function DrawCircle () {
+      ctx.beginPath();
+      ctx.strokeStyle = "blue";
+      ctx.lineWidth = "1";
+      ctx.arc(CircleX, CircleY, 5, 0, 2*Math.PI );
+      ctx.stroke();
+    }
 
-    ctx.beginPath();
-    ctx.strokeStyle = "black";
-    ctx.lineWidth = "1";
-    ctx.arc(CircleX, CircleY, 5, 0, 2*Math.PI );
-    ctx.stroke();
-
-
+    DrawCircle();
 
     document.addEventListener('keydown', function(event) {
       
@@ -47,14 +48,10 @@ export default {
       console.log("pressRight") 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        ctx.beginPath();
-        ctx.strokeStyle = "black";
-        ctx.lineWidth = "1";
-        ctx.arc(CircleX, CircleY, 5, 0, 2*Math.PI );
-        ctx.stroke();
+       DrawCircle();
 
         ctx.beginPath();
-        ctx.strokeStyle = "red";
+        ctx.strokeStyle = "purple";
         ctx.lineWidth = "1";
         X = X + 5;
         ctx.rect(X,Y, 10, 10);
@@ -65,15 +62,11 @@ export default {
         console.log('We have pressed LEFT arrow')
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        ctx.beginPath();
-        ctx.strokeStyle = "black";
-        ctx.lineWidth = "1";
-        ctx.arc(CircleX, CircleY, 5, 0, 2*Math.PI );
-        ctx.stroke();
+        DrawCircle();
 
 
         ctx.beginPath();
-        ctx.strokeStyle = "red";
+        ctx.strokeStyle = "purple";
         ctx.lineWidth = "1";
         X = X - 5;
         ctx.rect(X,Y, 10, 10);
@@ -84,14 +77,10 @@ export default {
         console.log("pressdown")
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        ctx.beginPath();
-        ctx.strokeStyle = "black";
-        ctx.lineWidth = "1";
-        ctx.arc(CircleX, CircleY, 5, 0, 2*Math.PI );
-        ctx.stroke();
+        DrawCircle();
 
         ctx.beginPath();
-        ctx.strokeStyle = "red";
+        ctx.strokeStyle = "purple";
         ctx.lineWidth = "1";
         Y = Y + 5;
         ctx.rect(X,Y, 10, 10);
@@ -102,15 +91,10 @@ export default {
         console.log("pressUp")
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        ctx.beginPath();
-        ctx.strokeStyle = "black";
-        ctx.lineWidth = "1";
-        ctx.arc(CircleX, CircleY, 5, 0, 2*Math.PI );
-        ctx.stroke();
-
+        DrawCircle();
 
         ctx.beginPath();
-        ctx.strokeStyle = "red";
+        ctx.strokeStyle = "purple";
         ctx.lineWidth = "1";
         Y = Y - 5;
         ctx.rect(X,Y, 10, 10);
