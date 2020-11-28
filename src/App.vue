@@ -19,6 +19,8 @@ export default {
     let ctx = canvas.getContext("2d");
 
     let X = 10;
+
+    let Y = 10;
     
     ctx.beginPath();
     ctx.strokeStyle = "red";
@@ -27,18 +29,49 @@ export default {
     ctx.stroke();
 
     document.addEventListener('keydown', function(event) {
-      if(event.key === 'ArrowRight') {
+      
+      if(event.key === 'ArrowRight' && X < canvas.width - 10) {
+      console.log("pressRight") 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         ctx.beginPath();
         ctx.strokeStyle = "red";
         ctx.lineWidth = "1";
         X = X + 5;
-        ctx.rect(X, 10, 10, 10);
+        ctx.rect(X,Y, 10, 10);
         ctx.stroke();
       }
 
-      if(event.key === 'ArrowLeft') {
+      if(event.key === 'ArrowLeft' && X>0) {
         console.log('We have pressed LEFT arrow')
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = "1";
+        X = X - 5;
+        ctx.rect(X,Y, 10, 10);
+        ctx.stroke();
+      }
+
+      if(event.key === 'ArrowDown' && Y < canvas.height - 10) {
+        console.log("pressdown")
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = "1";
+        Y = Y + 5;
+        ctx.rect(X,Y, 10, 10);
+        ctx.stroke();
+      }
+
+      if(event.key === 'ArrowUp' && Y>0) {
+        console.log("pressUp")
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.strokeStyle = "red";
+        ctx.lineWidth = "1";
+        Y = Y - 5;
+        ctx.rect(X,Y, 10, 10);
+        ctx.stroke();
       }
     });
 
