@@ -21,7 +21,11 @@ export default {
     let X = 10;
 
     let Y = 10;
+
+    let CircleX = Math.random()*canvas.width;
     
+    let CircleY = Math.random()* canvas.height;
+  
     ctx.beginPath();
     ctx.strokeStyle = "red";
     ctx.lineWidth = "1";
@@ -30,9 +34,9 @@ export default {
 
 
     ctx.beginPath();
-    ctx.strokeStyle = "blue";
+    ctx.strokeStyle = "black";
     ctx.lineWidth = "1";
-    ctx.arc(Math.random()*canvas.width, Math.random()* canvas.height, 5, 0, 2*Math.PI );
+    ctx.arc(CircleX, CircleY, 5, 0, 2*Math.PI );
     ctx.stroke();
 
 
@@ -42,6 +46,13 @@ export default {
       if(event.key === 'ArrowRight' && X < canvas.width - 10) {
       console.log("pressRight") 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.beginPath();
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = "1";
+        ctx.arc(CircleX, CircleY, 5, 0, 2*Math.PI );
+        ctx.stroke();
+
         ctx.beginPath();
         ctx.strokeStyle = "red";
         ctx.lineWidth = "1";
@@ -53,6 +64,14 @@ export default {
       if(event.key === 'ArrowLeft' && X>0) {
         console.log('We have pressed LEFT arrow')
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.beginPath();
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = "1";
+        ctx.arc(CircleX, CircleY, 5, 0, 2*Math.PI );
+        ctx.stroke();
+
+
         ctx.beginPath();
         ctx.strokeStyle = "red";
         ctx.lineWidth = "1";
@@ -64,6 +83,13 @@ export default {
       if(event.key === 'ArrowDown' && Y < canvas.height - 10) {
         console.log("pressdown")
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.beginPath();
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = "1";
+        ctx.arc(CircleX, CircleY, 5, 0, 2*Math.PI );
+        ctx.stroke();
+
         ctx.beginPath();
         ctx.strokeStyle = "red";
         ctx.lineWidth = "1";
@@ -75,6 +101,14 @@ export default {
       if(event.key === 'ArrowUp' && Y>0) {
         console.log("pressUp")
         ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        ctx.beginPath();
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = "1";
+        ctx.arc(CircleX, CircleY, 5, 0, 2*Math.PI );
+        ctx.stroke();
+
+
         ctx.beginPath();
         ctx.strokeStyle = "red";
         ctx.lineWidth = "1";
