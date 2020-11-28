@@ -28,6 +28,15 @@ export default {
     ctx.rect(X, 10, 10, 10);
     ctx.stroke();
 
+
+    ctx.beginPath();
+    ctx.strokeStyle = "blue";
+    ctx.lineWidth = "1";
+    ctx.arc(Math.random()*canvas.width, Math.random()* canvas.height, 5, 0, 2*Math.PI );
+    ctx.stroke();
+
+
+
     document.addEventListener('keydown', function(event) {
       
       if(event.key === 'ArrowRight' && X < canvas.width - 10) {
